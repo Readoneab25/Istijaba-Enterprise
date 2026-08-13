@@ -1,0 +1,186 @@
+/* ===========================================================
+   ISTIJABA ENTERPRISES — Design tokens
+   =========================================================== */
+   :root {
+    /* Color — deep teal-black + warm ivory + coral accent */
+    --ink: #0A1F1C;           /* deep teal-black */
+    --cream: #F7F4EC;         /* warm ivory */
+    --surface: #EFE9DA;       /* card surface */
+    --pond: #12786B;          /* primary accent (teal) */
+    --pond-deep: #0A4A42;
+    --amber: #E76F51;         /* secondary accent (coral) */
+    --amber-light: #F3A583;
+    --line: rgba(10, 31, 28, 0.14);
+    --ink-soft: rgba(10, 31, 28, 0.66);
+  
+    /* Type */
+    --font-display: 'Fraunces', serif;
+    --font-body: 'Inter', sans-serif;
+    --font-mono: 'IBM Plex Mono', monospace;
+  
+    /* Scale */
+    --step-0: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
+    --step-1: clamp(1.25rem, 1.15rem + 0.5vw, 1.5rem);
+    --step-2: clamp(1.75rem, 1.5rem + 1vw, 2.25rem);
+    --step-3: clamp(2.25rem, 1.9rem + 1.75vw, 3.25rem);
+    --step-4: clamp(3rem, 2.3rem + 3.5vw, 5rem);
+  
+    --radius: 14px;
+    --ease: cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  /* html, body {
+    overflow-x: hidden;
+  } */
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+  body {
+    margin: 0;
+    background: linear-gradient(180deg, #F7F4EC 0%, #EDE0C4 35%, #E4D0A8 65%, #D6BE8E 100%);
+    background-attachment: fixed;
+    color: var(--ink);
+    font-family: var(--font-body);
+    font-size: var(--step-0);
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+  }
+  
+  img { max-width: 100%; display: block; }
+  a { color: inherit; }
+  
+  h1, h2, h3, h4 {
+    font-family: var(--font-display);
+    font-weight: 600;
+    line-height: 1.05;
+    margin: 0;
+    letter-spacing: -0.01em;
+  }
+  
+  p { margin: 0; }
+  
+  .wrap {
+    width: min(1180px, 100% - 3rem);
+    margin-inline: auto;
+  }
+  
+  :focus-visible {
+    outline: 3px solid var(--amber);
+    outline-offset: 3px;
+  }
+  
+  /* Buttons */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-size: 0.95rem;
+    padding: 0.9rem 1.6rem;
+    border-radius: 999px;
+    border: 1.5px solid transparent;
+    cursor: pointer;
+    text-decoration: none;
+    transition: transform 0.35s var(--ease), background 0.3s ease, color 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    white-space: nowrap;
+  }
+  .btn-primary {
+    background: var(--ink);
+    color: var(--cream);
+    width: max-content;
+    justify-content: center;
+  }
+
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 24px rgba(10,31,28,0.3);
+  }
+  .btn-outline {
+    background: transparent;
+    border-color: var(--ink);
+    color: var(--ink);
+  }
+  .btn-outline:hover {
+    background: var(--ink);
+    color: var(--cream);
+    transform: translateY(-2px);
+  }
+  .btn-amber {
+    background: var(--amber);
+    color: var(--cream);
+  }
+  .btn-amber:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 24px rgba(231,111,81,0.4);
+  }
+
+  /* glass button — for use over dark/photo-style backgrounds like the hero */
+  .btn-glass {
+    background: rgba(247,244,236,0.12);
+    backdrop-filter: blur(10px);
+    border-color: rgba(247,244,236,0.4);
+    color: var(--cream);
+  }
+  .btn-glass:hover {
+    background: rgba(247,244,236,0.9);
+    color: var(--ink);
+    transform: translateY(-2px);
+  }
+  
+  /* Eyebrow / label */
+  .eyebrow {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--pond-deep);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .eyebrow::before {
+    content: '';
+    width: 18px;
+    height: 1.5px;
+    background: var(--amber);
+    display: inline-block;
+  }
+  /* light variant for use over dark/photo backgrounds */
+  .eyebrow-light {
+    color: var(--cream);
+  }
+  
+  /* Section rhythm */
+  section { padding: clamp(3.5rem, 6vw, 7rem) 0; }
+  
+  /* Reveal-on-scroll */
+  .reveal {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.8s var(--ease), transform 0.8s var(--ease);
+  }
+  .reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .reveal-stagger > * {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.7s var(--ease), transform 0.7s var(--ease);
+  }
+  .reveal-stagger.is-visible > * { opacity: 1; transform: translateY(0); }
+  .reveal-stagger.is-visible > *:nth-child(1) { transition-delay: 0.05s; }
+  .reveal-stagger.is-visible > *:nth-child(2) { transition-delay: 0.15s; }
+  .reveal-stagger.is-visible > *:nth-child(3) { transition-delay: 0.25s; }
+  .reveal-stagger.is-visible > *:nth-child(4) { transition-delay: 0.35s; }
+  .reveal-stagger.is-visible > *:nth-child(5) { transition-delay: 0.45s; }
+  .reveal-stagger.is-visible > *:nth-child(6) { transition-delay: 0.55s; }

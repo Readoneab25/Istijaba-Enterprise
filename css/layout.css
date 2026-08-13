@@ -1,0 +1,233 @@
+/* ===========================================================
+   HEADER
+   =========================================================== */
+   
+   body[data-page="index.html"] .site-header:not(.scrolled) .brand,
+body[data-page="index.html"] .site-header:not(.scrolled) .main-nav a {
+  color: var(--cream);
+}
+body[data-page="index.html"] .site-header:not(.scrolled) .brand-name .sub {
+  color: var(--amber-light);
+}
+body[data-page="index.html"] .site-header:not(.scrolled) .nav-toggle span {
+  background: var(--cream);
+}
+   
+   
+   .site-header {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    padding: 1.1rem 0;
+    transition: background 0.4s ease, box-shadow 0.4s ease, padding 0.4s ease;
+  }
+  .site-header.scrolled {
+    background: rgba(247, 244, 236, 0.88);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 1px 0 var(--line), 0 8px 24px rgba(10,31,28,0.06);
+    padding: 0.75rem 0;
+  }
+  .header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    text-decoration: none;
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 1.25rem;
+    color: var(--ink);
+  }
+  .brand-mark {
+    width: 34px;
+    height: 34px;
+    flex-shrink: 0;
+    transition: transform 0.4s var(--ease);
+  }
+  .brand:hover .brand-mark {
+    transform: rotate(-8deg) scale(1.06);
+  }
+  .brand-name { letter-spacing: -0.01em; 
+  font-size: 1.5rem;
+  }
+  .brand-name .sub {
+    display: block;
+    font-family: var(--font-mono);
+    font-size: 0.9rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--pond-deep);
+    font-weight: 500;
+    margin-top: 1px;
+  }
+  
+  .main-nav { display: flex; align-items: center; gap: 2.1rem; }
+  .main-nav a {
+    text-decoration: none;
+    font-size: 0.92rem;
+    font-weight: 500;
+    color: var(--ink);
+    position: relative;
+    padding: 4px 0;
+    transition: color 0.3s ease;
+  }
+  .main-nav a::after {
+    content: '';
+    position: absolute;
+    left: 0; bottom: 0;
+    width: 0; height: 2px;
+    background: var(--amber);
+    transition: width 0.35s var(--ease);
+  }
+  .main-nav a:hover::after,
+  .main-nav a[aria-current="page"]::after { width: 100%; }
+  .main-nav a[aria-current="page"] { color: var(--pond-deep); }
+  
+  .nav-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    width: 42px; height: 42px;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    border-radius: 50%;
+    transition: background 0.3s ease;
+  }
+  .nav-toggle:hover {
+    background: rgba(10,31,28,0.06);
+  }
+  .nav-toggle span {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: var(--amber);
+    transition: transform 0.35s var(--ease), opacity 0.3s ease;
+  }
+  
+  .nav-toggle.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .nav-toggle.open span:nth-child(2) { opacity: 0; }
+  .nav-toggle.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+  
+  @media (max-width: 860px) {
+    .nav-toggle { display: flex; }
+    .main-nav {
+      position: fixed;
+      top: 0; right: 0;
+      height: 100vh;
+      width: min(320px, 78vw);
+      background: var(--ink);
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: center;
+      gap: 1.6rem;
+      padding: 2rem 2.4rem;
+      transform: translateX(100%);
+      transition: transform 0.45s var(--ease);
+      box-shadow: -20px 0 60px rgba(10,31,28,0.25);
+    }
+    .main-nav.open { transform: translateX(0); }
+    .main-nav a { color: var(--cream); font-size: 1.15rem; }
+    .main-nav .btn-primary { background: var(--amber); color: var(--cream); margin-top: 0.5rem; }
+  }
+  .main-nav button a{
+    color: var(--cream);
+  }
+  /* ===========================================================
+     FOOTER
+     =========================================================== */
+  .site-footer {
+    background: var(--ink);
+    color: var(--cream);
+    padding: 4.5rem 0 2rem;
+    margin-top: 6rem;
+  }
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr 1fr 1.2fr;
+    gap: 2.5rem;
+  }
+  .footer-brand .brand { color: var(--cream); }
+  .footer-brand .sub { color: var(--amber-light); }
+  .footer-tagline {
+    margin-top: 1rem;
+    color: rgba(247,244,236,0.65);
+    max-width: 32ch;
+    font-size: 0.92rem;
+  }
+  .footer-col h4 {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--amber-light);
+    margin-bottom: 1rem;
+    font-weight: 500;
+  }
+  .footer-col a, .footer-col p {
+    display: block;
+    color: rgba(247,244,236,0.82);
+    text-decoration: none;
+    font-size: 0.92rem;
+    margin-bottom: 0.7rem;
+    transition: color 0.25s ease, transform 0.25s ease;
+  }
+  .footer-col a:hover { color: var(--amber-light); transform: translateX(3px); }
+  .footer-bottom {
+    margin-top: 3.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(247,244,236,0.14);
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+    font-size: 0.8rem;
+    color: rgba(247,244,236,0.5);
+  }
+  .footer-bottom a{
+    text-decoration: none;
+    transition: color 0.25s ease;
+  }
+  .footer-bottom a:hover {
+    color: var(--amber-light);
+  }
+  @media (max-width: 760px) {
+    .footer-grid { grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 500px) {
+    .footer-grid { grid-template-columns: 1fr; }
+  }
+  
+  /* WhatsApp floating button */
+  .wa-float {
+    position: fixed;
+    bottom: 1.6rem;
+    right: 1.6rem;
+    z-index: 90;
+    width: 58px; height: 58px;
+    border-radius: 50%;
+    background: #2E7D5B;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 24px rgba(10,31,28,0.35);
+    color: #fff;
+    text-decoration: none;
+    animation: floatPulse 3s ease-in-out infinite;
+  }
+  .wa-float:hover {
+    animation-play-state: paused;
+    transform: scale(1.1);
+  }
+  .wa-float svg { width: 28px; height: 28px; }
+  @keyframes floatPulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.06); }
+  }

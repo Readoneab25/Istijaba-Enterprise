@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact — Istijaba Enterprises</title>
+<meta name="description" content="Get in touch with Istijaba Enterprises to order fish feed, live fish or equipment, or ask a question.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/layout.css">
+<link rel="stylesheet" href="css/inner.css">
+</head>
+<body data-page="contact.html">
+
+<div id="header-placeholder"></div>
+
+<main>
+
+  <section class="page-hero">
+    <div class="wrap" style="cursor: default;">
+      <p class="eyebrow reveal is-visible">Get in touch</p>
+      <h1 class="page-hero-title reveal is-visible">Let's get your order sorted.</h1>
+      <p class="page-hero-sub reveal is-visible">
+        Fill the form, WhatsApp us, or call directly &mdash; whichever's easiest for you. We usually reply within
+        the same working day.
+      </p>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap contact-grid">
+
+      <div class="contact-info-card reveal" style="cursor: default;">
+        <h3>Contact details</h3>
+        <p>Reach us any way that works for you.</p>
+
+        <div class="contact-method">
+          <div class="contact-method-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          </div>
+          <div>
+            <span class="label">Phone</span>
+            <a href="tel:+2340000000000" >+234 000 000 0000</a>
+          </div>
+        </div>
+
+        <div class="contact-method">
+          <div class="contact-method-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 6l-10 7L2 6"/><path d="M2 6h20v12H2z"/></svg>
+          </div>
+          <div>
+            <span class="label">Email</span>
+            <a href="mailto:sanctum06016@gmail.com">sanctum06016@gmail.com</a>
+          </div>
+        </div>
+
+        <div class="contact-method">
+          <div class="contact-method-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <div>
+            <span class="label">Location</span>
+            <span>Warehouse address &mdash; add here</span>
+          </div>
+        </div>
+
+        <div class="contact-method">
+          <div class="contact-method-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+          </div>
+          <div>
+            <span class="label">Hours</span>
+            <span>Mon &ndash; Sat, 8am &ndash; 6pm</span>
+          </div>
+        </div>
+
+        <div class="map-embed">
+          <iframe
+            src="https://www.google.com/maps?q=Lagos,Nigeria&output=embed"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Map location"></iframe>
+        </div>
+      </div>
+
+      <form class="contact-form reveal" id="contactForm">
+        <input type="hidden" name="redirect" value="https://yourdomain.com/thank-you.html">
+        <input type="hidden" name="access_key" value="YOUR-ACCESS-KEY-HERE">
+        <input type="hidden" name="subject" value="New enquiry from Istijaba website">
+        <input type="checkbox" name="botcheck" style="display:none">        <div class="form-row">
+          <label for="name">Full name</label>
+          <input type="text" id="name" name="name" required placeholder="Your name">
+        </div>
+        <div class="form-two-col">
+          <div class="form-row">
+            <label for="phone">Phone</label>
+            <input type="tel" id="phone" name="phone" required placeholder="080...">
+          </div>
+          <div class="form-row">
+            <label for="email">Email (optional)</label>
+            <input type="email" id="email" name="email" placeholder="you@email.com">
+          </div>
+        </div>
+        <div class="form-row">
+          <label for="interest">What do you need?</label>
+          <select id="interest" name="interest" required>
+            <option>Fish feed</option>
+            <option>Live fish</option>
+            <option>Pond equipment</option>
+            <option>Not sure yet</option>
+          </select>
+        </div>
+        <div class="form-row">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" required placeholder="Tell us what you need and quantity, if known"></textarea>
+        </div>
+        <!-- <div class="h-captcha" data-captcha="true"></div> -->
+        <div class="form-submit-row">
+          <button type="submit" class="btn btn-primary" style="width: 100%;">Send message</button>
+          <span class="form-note" style="cursor: default;">We typically reply the same working day.</span>
+        </div>
+        <div class="form-status" id="formStatus"></div>
+      </form>
+
+    </div>
+  </section>
+
+  <!-- ============ FAQ ============ -->
+  <section>
+    <div class="wrap" style="max-width: 760px;">
+      <div class="section-head reveal" style="cursor: default;">
+        <p class="eyebrow">Common questions</p>
+        <h2>Before you reach out</h2>
+      </div>
+      <div class="faq-list reveal">
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>Do you deliver outside Kwara State?</span>
+            <span class="faq-icon"></span>
+          </button>
+          <div class="faq-answer" style="cursor: default;"><p>Yes, we currently deliver to select locations beyond Kwara State &mdash; message us your location and we'll confirm delivery timing and cost.</p></div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>What's your minimum order?</span>
+            <span class="faq-icon"></span>
+          </button>
+          <div class="faq-answer" style="cursor: default;"><p>There's no strict minimum for feed, though bulk orders get better pricing. For live fish, orders are typically per lot &mdash; ask us for current lot sizes.</p></div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>Can I pay on delivery?</span>
+            <span class="faq-icon"></span>
+          </button>
+          <div class="faq-answer" style="cursor: default;"><p>Payment terms depend on order size and delivery location &mdash; we'll confirm the available options when you reach out.</p></div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>How fresh is the live fish stock?</span>
+            <span class="faq-icon"></span>
+          </button>
+          <div class="faq-answer" style="cursor: default;"><p>All live fish are sourced and quarantine-checked before we accept them into stock, and we can confirm current batch details when you order.</p></div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<div id="footer-placeholder"></div>
+
+<script src="js/partials.js"></script>
+<script src="js/contact.js"></script>
+<script src="https://web3forms.com/client/script.js" async defer></script>
+</body>
+</html>
